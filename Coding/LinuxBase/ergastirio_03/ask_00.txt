@@ -1,0 +1,46 @@
+1. 
+    find /home 
+
+        /home/tl20363/.gnupg
+        find: ‘/home/tl20363/.gnupg’: Permission denied
+        /home/tl20363/.cache
+        find: ‘/home/tl20363/.cache’: Permission denied
+        /home/tl20363/.xscreensaver
+        /home/tl20363/.config
+
+    
+2. 
+    find /home 2>/dev/null
+    Δηλαδή εμφανίζει όλα τα αρχεία και υποφακέλους στον κατάλογο /home και αν υπάρχει ενα standard error stream (2) θα το μεταφέρει στο /dev/null, άρα δέν θα εμφανιστεί στην οθόνη. 
+    
+        /home/tl20363/work/perm2.txt
+        /home/tl20363/work/perm3.txt
+        /home/tl20363/work/perm.txt
+        /home/tl20363/work/testfile
+        /home/tl20363/.bash_history
+        /home/tl20363/.profile
+
+3. 
+    find /home -size +1M 2>/dev/null
+        
+        /home/urandom
+        /home/student1/work/units-2.12.tar
+
+4. 
+    file /home/*
+    
+        /home/tl5732:   directory
+        /home/tl5735:   directory
+        /home/tl5964:   directory
+        /home/tl5982:   directory
+        /home/urandom:  data
+
+    find /home -type f 
+
+        
+        /home/tl20363/work/perm2.txt
+        /home/tl20363/work/perm3.txt
+        /home/tl20363/work/perm.txt
+        /home/tl20363/work/testfile
+        /home/tl20363/.bash_history
+        /home/tl20363/.profile

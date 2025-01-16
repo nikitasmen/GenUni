@@ -1,0 +1,26 @@
+1. 
+    sleep 25 &
+        [1] 19175
+    kill %1
+
+    sleep 25 & 
+        [2] 19229
+    kill 19229
+2. 
+     sleep 25 &
+        [1] 19232
+    kill -STOP %1 
+    bg 19232
+3. 
+    sleep 60 &
+        [1] 19234
+    sleep 60 &
+        [2] 19235
+    sleep 60 &
+        [3] 19236
+    pkill sleep
+        pkill: killing pid 25832 failed: Operation not permitted
+        [1]   Terminated              sleep 60
+        [2]-  Terminated              sleep 60
+        [3]+  Terminated              sleep 60
+

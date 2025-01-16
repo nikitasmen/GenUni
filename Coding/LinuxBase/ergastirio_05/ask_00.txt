@@ -1,0 +1,84 @@
+1. 
+    GET /index.html 
+
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+    <html><head>
+    <title>302 Found</title>
+    </head><body>
+    <h1>Found</h1>
+    <p>The document has moved <a href="https://eclass.chania.hmu.gr/index.html">here</a>.</p>
+    </body></html>
+    Connection closed by foreign host.
+
+    Ερμηνεία: Επιστρέφει τον html κώδικα του αρχείου index.html στην τοποθεσία https://eclass.chania.hmu.gr
+
+2.  
+    
+    GET /index.html HTTP/1.0
+
+    
+    HTTP/1.1 302 Found
+    Date: Sun, 12 Nov 2023 13:40:46 GMT
+    Server: Apache/2.4.6 (CentOS) OpenSSL/1.0.2k-fips PHP/7.4.24
+    Location: https://eclass.chania.hmu.gr/index.html
+    Content-Length: 223
+    Connection: close
+    Content-Type: text/html; charset=iso-8859-1
+
+    <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+    <html><head>
+    <title>302 Found</title>
+    </head><body>
+    <h1>Found</h1>
+    <p>The document has moved <a href="https://eclass.chania.hmu.gr/index.html">here</a>.</p>
+    </body></html>
+    Connection closed by foreign host.
+
+    Ερμηνεία: Επιστρέφει τον html κώδικα του αρχείου index.html στην τοποθεσία https://eclass.chania.hmu.gr καθώς και γενικές πληροφορίες για το Get request που έγινε 
+
+3. 
+    a. 
+        telnet remote.go.hmu.gr 2222
+         
+        Trying 147.95.140.4...
+        Connected to remote.go.hmu.gr.
+        Escape character is '^]'.
+        SSH-2.0-OpenSSH_7.6p1 Ubuntu-4ubuntu0.7+esm2
+
+    b.  
+        ssh tl20412@remote.go.hmu.gr
+        ssh: connect to host remote.go.hmu.gr port 22: Connection refused
+
+        Η σύνδεση δεν μπορεί να γίνει απο την πύλη 22 (default port)
+    
+    c. 
+        ssh tl20412@remote.go.hmu.gr -p 2222
+
+        The authenticity of host '[remote.go.hmu.gr]:2222 ([147.95.140.4]:2222)' can't be established.
+        ECDSA key fingerprint is SHA256:Ju6OGSBB2V7A0q2shfGvUcLYWl/IFlH3lQOTy0YLy3w.
+        Are you sure you want to continue connecting (yes/no)? yes
+        Warning: Permanently added '[remote.go.hmu.gr]:2222,[147.95.140.4]:2222' (ECDSA) to the list of known hosts.
+        tl20412@remote.go.hmu.gr's password:
+        Welcome to Ubuntu 18.04.6 LTS (GNU/Linux 4.15.0-214-generic i686)
+
+        * Documentation:  https://help.ubuntu.com
+        * Management:     https://landscape.canonical.com
+        * Support:        https://ubuntu.com/advantage
+
+        Expanded Security Maintenance for Infrastructure is enabled.
+
+        0 updates can be applied immediately.
+
+
+        The programs included with the Ubuntu system are free software;
+        the exact distribution terms for each program are described in the
+        individual files in /usr/share/doc/*/copyright.
+
+        Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+        applicable law.
+
+        Last login: Fri Apr  8 15:53:54 2016 from 147.95.130.3
+        tl20412@remote:~$
+
+
+    Έγινε η σύνδεση 3 γιατί ειναι η μοναδική οπού επειτρέπει την είσοδο χρηστών αλλά μόνο απο την πύκη 2222 

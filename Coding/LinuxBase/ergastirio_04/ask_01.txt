@@ -1,0 +1,20 @@
+1.
+    sleep 45 
+    Η εντολή αυτή καθυστερεί την εκτέλεση ενός προγράμματος για ένα συγκεκριμένο χρονικό διάστημα.
+
+2. 
+    sleep 45 & 
+    [3] 26085
+
+3. 
+    tl20412@xubuntu:~$ sleep 60
+        ^Z
+        [1]+  Stopped                 sleep 60
+    tl20412@xubuntu:~$ bg
+        [1]+ sleep 60 &
+    tl20412@xubuntu:~$ jobs
+        [1]+  Running                 sleep 60 &
+    tl20412@xubuntu:~$ fg
+        sleep 60
+
+

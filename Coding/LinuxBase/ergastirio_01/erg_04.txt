@@ -1,0 +1,28 @@
+1. 
+    echo *
+    dir 
+    find .
+2.
+    cat >>\$FILE
+    rm \$FILE
+3. 
+    cat >> '#FILE'
+    rm '#FILE'
+4. 
+    cat >> "-FILE"
+     rm ./-FILE
+5. 
+    cp {/etc,}{/passwd,/group} /home/tl20412
+6.
+    cp -r ./play ./work
+7. 
+    rm -r ./work
+8.
+     rm -rf media
+        rm: cannot remove 'media/floppy': Permission denied
+        rm: cannot remove 'media/floppy0': Permission denied
+9.
+    ls -d  Εμφανίζει τους φακέλους που έχουν υποφακέλους  
+    ls -i  Εμφανίζει τους φακέλους με το index τους 
+    ls -R  Εμφανίζει τους φακέλους καθώς και τους υποφακέλους που υπάρχουν
+    ls -F  Εμφανίζει τον τύπο των αρχείων βάζοντας '/' για τους φακέλους ή '*' για τα εκτελέσιμα αρχεία 

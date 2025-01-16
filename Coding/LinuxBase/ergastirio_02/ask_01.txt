@@ -1,0 +1,10 @@
+1. 
+    chmod 700 testfile 
+2. 
+    chmod go=--- testfile
+3. 
+    chmod 604 testfile
+4. 
+    chomod 704 /home/tl20412/work
+5. 
+    cat testfile
