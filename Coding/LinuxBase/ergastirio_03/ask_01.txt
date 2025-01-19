@@ -1,0 +1,28 @@
+1. 
+    grep tl20412 /etc/passwd
+
+       tl20412:x:1013:1013:Menounos_Nikitas:/home/tl20412:/bin/bash 
+
+2. 
+    find /home -type f -exec grep -l "hello" {} + | sort
+
+        
+        /home/tl20487/world.txt
+        /home/tl20533/world2.txt
+        /home/tl20533/world.txt
+        /home/tl20534/play/hello.txt
+        /home/tl4446/play/hello.txt
+        /home/tl5605/hello.txt
+        /home/tl5605/world.txt
+
+3. 
+    locate emacs | grep -v "lib"
+
+                
+        /etc/emacs/site-start.d
+        /etc/emacs/site-start.el
+        /etc/emacs/site-start.d/00debian-vars.el
+        /etc/emacs/site-start.d/50dictionaries-common.el
+        /etc/speech-dispatcher/clients/emacs.conf
+        /usr/local/share/emacs
+        /usr/local/share/emacs/site-lisp

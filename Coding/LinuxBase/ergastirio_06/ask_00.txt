@@ -1,0 +1,10 @@
+1 . 
+    You have: 2 hours + 23 minutes + 32 seconds
+    You want: seconds
+            * 8612
+            / 0.00011611705
+2. 
+    
+    You have: tempC(22)
+    You want: tempF
+            71.6

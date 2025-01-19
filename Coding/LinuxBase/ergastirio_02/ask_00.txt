@@ -1,0 +1,9 @@
+1.  
+    touch perm.txt
+2. 
+    cp perm.txt perm2.txt 
+    cp perm.txt perm3.txt
+3. 
+    chmod 444 perm.txt
+    chmod u=r,g=r,o=r perm2.txt
+    chmod -wx perm3.txt

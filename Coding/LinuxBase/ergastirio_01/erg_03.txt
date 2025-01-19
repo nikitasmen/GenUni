@@ -1,0 +1,19 @@
+1. 
+    ln -s /dev/pts/1 terminal
+2. 
+    Εντολή: ln /dev/pts/1 terminal
+    Μύνημα σφάλματος: ln: failed to create hard link 'terminal2' => '/dev/pts/1': Invalid cross-device link
+3.  
+    Η εντολή ls -l εμφανίζει όλες τις πληροφορίες για τα αρχεία και τους καταλόγους. Για τους συνδέσμους εμφανίζει το που δείχνει ο σύνδεσμος
+    Η εντολή ls -1L εμφανίζει πληροφορίες για το στοιχείο προς το οποίο δείχνει ο σύνδεσμος. 
+4. 
+     cat >> hello.txt
+5. 
+    cp terminal hello2.txt
+    Γράφουμε στο αρχείο το μύνημα Hello world 
+    cat hello2.txt 
+    Εμνίζει το μύνημα hello world
+6. 
+    cp hello.txt terminal
+    Εμνίζει το κείμενο του αρχείου hello.txt
+    

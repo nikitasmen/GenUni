@@ -1,0 +1,267 @@
+1. 
+    Στον φάκελο /bin παρατηρούμε ότι υπάρχουν εκτελέσιμα αρχεία των εντολών του συστήματος. 
+    Στον φάκελο /usr παρατηρούμε ότι υπάρχουν οι φάκελοι των χρηστών.
+    Στον φάκελο /usr/bin παρατηρούμε ότι υπάρχουν τα εκτελέσημα αρχεία που ειναι διαθέσημα για τους χρήστες. 
+    Στον φάκελο /sbin παρατηρούμε ότι υπάρχουν τα εκτελέσημα αρχεία που ειναι διαθέσημα για τον root user. 
+    Στον φάκελο /tmp παρατηρούμε ότι έχει μέσα δεδομένα του συστήματος και εφαρμογών που θα χρειαστούν για σιγκεκριμένο χρονικό περιθώριο. 
+    Στον φάκελο /boot παρατηρούμε ότι υπάρχουν όλα τα αρχεία και φάκελοι που απετούνται για να γίνει boot. 
+
+2. 
+    Οι περιφεριακές συσκευές που είναι διαθέσημες είναι: disk, video, kmem, netdev, cdrom 
+    Οι character-oriented είναι αυτές που ο τύπος αρχείου ειναι "c" π.χ. console, null, mem, tty 
+    Οι block-oriented είναι αυτές που ο τύπος αρχείου ειναι "b" π.χ. loop0 - loop7 , fd0 ,  
+
+3. 
+    Η συσκευή του τερματικού είναι pts/3 και ο ιδιοκτήτης του τερματικού ειναι ο tty
+
+4. 
+    Interrupts :    	                                                  
+                 CPU0       CPU1                                                  
+        0:         44          0   IO-APIC   2-edge      timer                      
+        1:          0         11   IO-APIC   1-edge      i8042                      
+        6:          0          2   IO-APIC   6-edge      floppy
+        7:          0          0   IO-APIC   7-edge      parport0
+        8:          1          0   IO-APIC   8-edge      rtc0
+        9:          0          0   IO-APIC   9-fasteoi   acpi
+        12:         15          0   IO-APIC  12-edge      i8042
+        14:          0          0   IO-APIC  14-edge      ata_piix
+        15:          0    4491883   IO-APIC  15-edge      ata_piix
+        16:          0          0   IO-APIC  16-fasteoi   vmwgfx
+        18:    4729604          0   IO-APIC  18-fasteoi   ioc0
+        24:          0          0   PCI-MSI 344064-edge      PCIe PME, pciehp
+        25:          0          0   PCI-MSI 346112-edge      PCIe PME, pciehp
+        26:          0          0   PCI-MSI 348160-edge      PCIe PME, pciehp
+        27:          0          0   PCI-MSI 350208-edge      PCIe PME, pciehp
+        28:          0          0   PCI-MSI 352256-edge      PCIe PME, pciehp
+        29:          0          0   PCI-MSI 354304-edge      PCIe PME, pciehp
+        30:          0          0   PCI-MSI 356352-edge      PCIe PME, pciehp
+        31:          0          0   PCI-MSI 358400-edge      PCIe PME, pciehp
+        32:          0          0   PCI-MSI 360448-edge      PCIe PME, pciehp
+        33:          0          0   PCI-MSI 362496-edge      PCIe PME, pciehp
+        34:          0          0   PCI-MSI 364544-edge      PCIe PME, pciehp
+        35:          0          0   PCI-MSI 366592-edge      PCIe PME, pciehp
+        36:          0          0   PCI-MSI 368640-edge      PCIe PME, pciehp
+        37:          0          0   PCI-MSI 370688-edge      PCIe PME, pciehp
+        38:          0          0   PCI-MSI 372736-edge      PCIe PME, pciehp
+        39:          0          0   PCI-MSI 374784-edge      PCIe PME, pciehp
+        40:          0          0   PCI-MSI 376832-edge      PCIe PME, pciehp
+        41:          0          0   PCI-MSI 378880-edge      PCIe PME, pciehp
+        42:          0          0   PCI-MSI 380928-edge      PCIe PME, pciehp
+        43:          0          0   PCI-MSI 382976-edge      PCIe PME, pciehp
+        44:          0          0   PCI-MSI 385024-edge      PCIe PME, pciehp
+        45:          0          0   PCI-MSI 387072-edge      PCIe PME, pciehp
+        46:          0          0   PCI-MSI 389120-edge      PCIe PME, pciehp
+        47:          0          0   PCI-MSI 391168-edge      PCIe PME, pciehp
+        48:          0          0   PCI-MSI 393216-edge      PCIe PME, pciehp
+        49:          0          0   PCI-MSI 395264-edge      PCIe PME, pciehp
+        50:          0          0   PCI-MSI 397312-edge      PCIe PME, pciehp
+        51:          0          0   PCI-MSI 399360-edge      PCIe PME, pciehp
+        52:          0          0   PCI-MSI 401408-edge      PCIe PME, pciehp
+        53:          0          0   PCI-MSI 403456-edge      PCIe PME, pciehp
+        54:          0          0   PCI-MSI 405504-edge      PCIe PME, pciehp
+        55:          0          0   PCI-MSI 407552-edge      PCIe PME, pciehp
+        56:          0          0   PCI-MSI 5767168-edge      eth0-rxtx-0
+        57:          0          0   PCI-MSI 5767169-edge      eth0-rxtx-1
+        58:          0          0   PCI-MSI 5767170-edge      eth0-event-2
+        59:   15147845          0   PCI-MSI 9961472-edge      eth1-rxtx-0
+        60:          0     235367   PCI-MSI 9961473-edge      eth1-rxtx-1
+        61:          0          0   PCI-MSI 9961474-edge      eth1-event-2
+        62:          0   21992436   PCI-MSI 14155776-edge      eth2-rxtx-0
+        63:    5258068          0   PCI-MSI 14155777-edge      eth2-rxtx-1
+        64:          0          0   PCI-MSI 14155778-edge      eth2-event-2
+        65:          0          0   PCI-MSI 129024-edge      vmw_vmci
+        66:          0          0   PCI-MSI 129025-edge      vmw_vmci
+        NMI:          0          0   Non-maskable interrupts
+        LOC:  208420819  209617887   Local timer interrupts
+        SPU:          0          0   Spurious interrupts
+        PMI:          0          0   Performance monitoring interrupts
+        IWI:          2          0   IRQ work interrupts
+        RTR:          0          0   APIC ICR read retries
+        RES:   34686243   34953838   Rescheduling interrupts
+        CAL:     975635     920101   Function call interrupts
+        TLB:     163123     145934   TLB shootdowns
+        TRM:          0          0   Thermal event interrupts
+        THR:          0          0   Threshold APIC interrupts
+        DFR:          0          0   Deferred Error APIC interrupts
+        MCE:          0          0   Machine check exceptions
+        MCP:      14546      14546   Machine check polls
+        ERR:          0
+        MIS:          0
+        PIN:          0          0   Posted-interrupt notification event
+        NPI:          0          0   Nested posted-interrupt event
+        PIW:          0          0   Posted-interrupt wakeup event
+
+    devices: 
+        Character devices:
+        1 mem
+        4 /dev/vc/0
+        4 tty
+        4 ttyS
+        5 /dev/tty
+        5 /dev/console
+        5 /dev/ptmx
+        5 ttyprintk
+        6 lp
+        7 vcs
+        10 misc
+        13 input
+        21 sg
+        29 fb
+        89 i2c
+        99 ppdev
+        108 ppp
+        128 ptm
+        136 pts
+        180 usb
+        189 usb_device
+        204 ttyMAX
+        226 drm
+        246 aux
+        247 bsg
+        248 watchdog
+        249 rtc
+        250 dax
+        251 dimmctl
+        252 ndctl
+        253 tpm
+        254 gpiochip
+
+        Block devices:
+        2 fd
+        7 loop
+        8 sd
+        9 md
+        11 sr
+        65 sd
+        66 sd
+        67 sd
+        68 sd
+        69 sd
+        70 sd
+        71 sd
+        128 sd
+        129 sd
+        130 sd
+        131 sd
+        132 sd
+        133 sd
+        134 sd
+        135 sd
+        253 device-mapper
+        254 mdp
+        259 blkext
+
+    cpuinfo: 
+        processor       : 0
+        vendor_id       : GenuineIntel
+        cpu family      : 15
+        model           : 6
+        model name      : Intel(R) Xeon(TM) CPU 3.00GHz
+        stepping        : 4
+        microcode       : 0x2
+        cpu MHz         : 2992.500
+        cache size      : 2048 KB
+        physical id     : 0
+        siblings        : 2
+        core id         : 0
+        cpu cores       : 2
+        apicid          : 0
+        initial apicid  : 0
+        fdiv_bug        : no
+        f00f_bug        : no
+        coma_bug        : no
+        fpu             : yes
+        fpu_exception   : yes
+        cpuid level     : 6
+        wp              : yes
+        flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht nx lm constant_tsc pebs bts tsc_reliable nonstop_tsc cpuid pni cx16 hypervisor lahf_lm pti
+        bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_unknown
+        bogomips        : 5985.00
+        clflush size    : 64
+        cache_alignment : 128
+        address sizes   : 40 bits physical, 48 bits virtual
+        power management:
+
+        processor       : 1
+        vendor_id       : GenuineIntel
+        cpu family      : 15
+        model           : 6
+        model name      : Intel(R) Xeon(TM) CPU 3.00GHz
+        stepping        : 4
+        microcode       : 0x2
+        cpu MHz         : 2992.500
+        cache size      : 2048 KB
+        physical id     : 0
+        siblings        : 2
+        core id         : 1
+        cpu cores       : 2
+        apicid          : 1
+        initial apicid  : 1
+        fdiv_bug        : no
+        f00f_bug        : no
+        coma_bug        : no
+        fpu             : yes
+        fpu_exception   : yes
+        cpuid level     : 6
+        wp              : yes
+        flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht nx lm constant_tsc pebs bts tsc_reliable nonstop_tsc cpuid pni cx16 hypervisor lahf_lm pti
+        bugs            : cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs itlb_multihit mmio_unknown
+        bogomips        : 5985.00
+        clflush size    : 64
+        cache_alignment : 128
+        address sizes   : 40 bits physical, 48 bits virtual
+        power management:
+
+    meminfo: 
+        MemTotal:        2059960 kB
+        MemFree:          357464 kB
+        MemAvailable:    1437520 kB
+        Buffers:          261504 kB
+        Cached:           814324 kB
+        SwapCached:          876 kB
+        Active:           718648 kB
+        Inactive:         618884 kB
+        Active(anon):     101844 kB
+        Inactive(anon):   164380 kB
+        Active(file):     616804 kB
+        Inactive(file):   454504 kB
+        Unevictable:           0 kB
+        Mlocked:               0 kB
+        HighTotal:       1189832 kB
+        HighFree:         174444 kB
+        LowTotal:         870128 kB
+        LowFree:          183020 kB
+        SwapTotal:       2095100 kB
+        SwapFree:        2058236 kB
+        Dirty:                 4 kB
+        Writeback:             0 kB
+        AnonPages:        260928 kB
+        Mapped:           107308 kB
+        Shmem:              4520 kB
+        Slab:             299828 kB
+        SReclaimable:     278712 kB
+        SUnreclaim:        21116 kB
+        KernelStack:        1888 kB
+        PageTables:         5152 kB
+        NFS_Unstable:          0 kB
+        Bounce:                0 kB
+        WritebackTmp:          0 kB
+        CommitLimit:     3125080 kB
+        Committed_AS:    1434596 kB
+        VmallocTotal:     122880 kB
+        VmallocUsed:           0 kB
+        VmallocChunk:          0 kB
+        AnonHugePages:         0 kB
+        ShmemHugePages:        0 kB
+        ShmemPmdMapped:        0 kB
+        CmaTotal:              0 kB
+        CmaFree:               0 kB
+        HugePages_Total:       0
+        HugePages_Free:        0
+        HugePages_Rsvd:        0
+        HugePages_Surp:        0
+        Hugepagesize:       2048 kB
+        DirectMap4k:       79864 kB
+        DirectMap2M:      827392 kB
+
+    Ο κατάλογος /proc είναι ένα εικονικό σύστημα αρχείων που δημιουργείται όταν το σύστημα εκκινείται και διαλύεται τη στιγμή του τερματισμού λειτουργίας του. Περιέχει χρήσιμες πληροφορίες για τις διεργασίες που εκτελούνται αυτήν τη στιγμή, θεωρείται ως κέντρο ελέγχου και πληροφοριών για τον πυρήνα. Ο κατάλογος proc παρέχει επίσης ένα μέσο επικοινωνίας μεταξύ του του πυρήνα και του χρήστη.

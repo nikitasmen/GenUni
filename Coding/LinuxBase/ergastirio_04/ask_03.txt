@@ -1,0 +1,6 @@
+1. 
+    ps -aeH | grep "systemd"
+2. 
+    ps -eaH | grep -v $$
+3. 
+    ps -fae | grep -v $$ | grep -v "grep"

@@ -1,0 +1,5 @@
+
+inorder : g c a h d i r e b j f k 
+preorder : r a c g d h i b e f j k 
+postorder : g c h i d a e j k f b r 
+
