@@ -13,8 +13,8 @@ int main(){
             max=x;
         }
         if(x%2==0 && x>0){
-            n=n+1;
-            z=z+x;
+            z+=x;
+            n+=1;
 
         }
 
