@@ -1,0 +1,1 @@
+First find duplicate matrix and then buble sort 
