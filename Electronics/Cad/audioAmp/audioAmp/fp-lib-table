@@ -1,4 +1,0 @@
-(fp_lib_table
-  (version 7)
-  (lib (name "audioAmp")(type "KiCad")(uri "/home/makis/Documents/GenUni/Electronics/KiCad/audioAmp/audioAmp.pretty")(options "")(descr ""))
-)
