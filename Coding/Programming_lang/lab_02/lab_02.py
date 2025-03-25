@@ -4,19 +4,19 @@ class ParagraphCheck:
     
     @staticmethod
     def simpleCheck(text):
-        sentence_pattern = r'([A-Z][a-z,\s]+[.!?]$)'    
+        sentence_pattern = r'([A-Z][a-z,\s]+[.!?])'    
         sentences = re.findall(sentence_pattern, text)
         return " ".join(sentences) == text
 
     @staticmethod
     def checkWithNumbers(text): 
-        sentence_pattern = r'([A-Z0-9][a-z0-9,\s]+[.!?]$)'  
+        sentence_pattern = r'([A-Z0-9][a-z0-9,\s]+[.!?])'  
         sentences = re.findall(sentence_pattern, text)
         return " ".join(sentences) == text
 
     @staticmethod
     def checkWithGreek(text): 
-        sentence_pattern = r'([A-Z\u0386-\u03AB\u0391-\u03A9][a-z\u03AC-\u03CE\u03B1-\u03C9,\s]+[.!?])'
+        sentence_pattern = r'([A-Z\u0386-\u03AB\u0391-\u03A9][a-z\u03AC-\u03CE\u03B1-\u03C9,\s]+[.!?;])'
         sentences = re.findall(sentence_pattern, text)
         return " ".join(sentences) == text
 
