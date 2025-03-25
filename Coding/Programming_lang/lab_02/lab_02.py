@@ -16,10 +16,10 @@ class ParagraphCheck:
 
     @staticmethod
     def checkWithGreek(text): 
-        sentence_pattern = r'([A-Z\u0386-\u03AB][a-z\u03AC-\u03CE,\s]*[.!?]$)'  
+        sentence_pattern = r'([A-Z\u0386-\u03AB\u0391-\u03A9][a-z\u03AC-\u03CE\u03B1-\u03C9,\s]+[.!?])'
         sentences = re.findall(sentence_pattern, text)
-        print(sentences)
         return " ".join(sentences) == text
+
 
 
 if __name__ == "__main__":
@@ -31,11 +31,11 @@ if __name__ == "__main__":
         print("Η παράγραφος δεν είναι σωστή.")
         
     
-    # paragraph = input("Εισάγετε μια παράγραφο: ")
-    # if ParagraphCheck.checkWithNumbers(paragraph):
-    #     print("Η παράγραφος είναι σωστή.")
-    # else:
-    #     print("Η παράγραφος δεν είναι σωστή.")
+    paragraph = input("Εισάγετε μια παράγραφο: ")
+    if ParagraphCheck.checkWithNumbers(paragraph):
+        print("Η παράγραφος είναι σωστή.")
+    else:
+        print("Η παράγραφος δεν είναι σωστή.")
         
         
     paragraph = input("Εισάγετε μια παράγραφο: ")
