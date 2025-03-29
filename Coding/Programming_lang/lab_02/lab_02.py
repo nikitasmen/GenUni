@@ -1,8 +1,18 @@
 import re
 
 class ParagraphCheck: 
+    def __init__(self): 
+        self.text = ""  
+        self.tap = ["just english", "numbers", "greek"] 
+        self.index= 0 
+        
+    def add(self): 
+        self.text = input(f"Enter a paragraph with {self.tap[self.index]}: ")
+        self.index += 1
+        return self.text
     
- 
+  
+            
     def simpleCheck(self):
         sentence_pattern = r'([A-Z][a-z,\s]+[.!?])'    
         sentences = re.findall(sentence_pattern, self.text)
@@ -23,11 +33,9 @@ class ParagraphCheck:
 if __name__ == "__main__":
 
     paragraph = ParagraphCheck(); 
-    paragraph.text = input("Enter a simple paragraph: ")
-    print(paragraph.simpleCheck())
     
-    paragraph.text = input("Enter a paragraph with numbers: ")
-    print(paragraph.checkWithNumbers())
-    
-    paragraph.text = input("Enter a paragraph with greek: ")
-    print(paragraph.checkWithGreek())
+    for i in range(3): 
+        paragraph.add()
+        print(paragraph.simpleCheck())
+        print(paragraph.checkWithNumbers())
+        print(paragraph.checkWithGreek())
