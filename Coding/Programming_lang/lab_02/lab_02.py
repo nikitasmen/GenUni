@@ -24,7 +24,7 @@ class ParagraphCheck:
         return " ".join(sentences) == self. text
 
     def checkWithGreek(self): 
-        sentence_pattern = r'([A-Z\u0386-\u03AB\u0391-\u03A9][a-z\u03AC-\u03CE\u03B1-\u03C9,\s]+[.!?;])'
+        sentence_pattern = r'([A-Z\u0386-\u03AB\u0391-\u03A9][a-z\u03AC-\u03CE\u03B1-\u03C9,\s]+[.!?;\u037E])'
         sentences = re.findall(sentence_pattern, self.text)
         return " ".join(sentences) == self.text
 
