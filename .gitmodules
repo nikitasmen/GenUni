@@ -1,3 +1,6 @@
 [submodule "Coding/Coding/Web/E-lib"]
 	path = Coding/Coding/Web/E-lib
 	url = https://github.com/nikitasmen/E-lib.git
+[submodule "Coding/Web/Forum/Coding/Web/Forum/406-db-major-project"]
+	path = Coding/Web/Forum/Coding/Web/Forum/406-db-major-project
+	url = https://github.com/evripiotandrew/406-db-major-project.git
