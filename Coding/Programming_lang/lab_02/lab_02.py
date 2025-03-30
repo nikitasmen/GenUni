@@ -3,15 +3,20 @@ import re
 class ParagraphCheck: 
     def __init__(self): 
         self.text = ""  
-        self.tap = ["just english", "numbers", "greek"] 
+        self.tap = { "just english": self.simpleCheck, "numbers": self.checkWithNumbers, "greek": self.checkWithGreek } 
         self.index= 0 
         
     def add(self): 
-        self.text = input(f"Enter a paragraph with {self.tap[self.index]}: ")
+        self.text = input(f"Enter a paragraph with {list(self.tap.keys())[self.index]}: ")
         self.index += 1
         return self.text
     
-  
+    def checkWrapper(self):  
+        key = list(self.tap.keys())[self.index - 1]  
+        print(f"Checking with {self.tap[key]()}...")
+        print(f"Text: {self.text}")
+        return self.tap[key]()              
+
             
     def simpleCheck(self):
         sentence_pattern = r'([A-Z][a-z,\s]+[.!?])'    
@@ -24,7 +29,7 @@ class ParagraphCheck:
         return " ".join(sentences) == self. text
 
     def checkWithGreek(self): 
-        sentence_pattern = r'([A-Z\u0386-\u03AB\u0391-\u03A9][a-z\u03AC-\u03CE\u03B1-\u03C9,\s]+[.!?;\u037E])'
+        sentence_pattern = r'([0-9A-Z\u0386-\u03AB\u0391-\u03A9][0-9a-z\u03AC-\u03CE\u03B1-\u03C9,\s]+[.!?;\u037E])'
         sentences = re.findall(sentence_pattern, self.text)
         return " ".join(sentences) == self.text
 
@@ -36,6 +41,5 @@ if __name__ == "__main__":
     
     for i in range(3): 
         paragraph.add()
-        print(paragraph.simpleCheck())
-        print(paragraph.checkWithNumbers())
-        print(paragraph.checkWithGreek())
+        print(paragraph.checkWrapper())
+        print("\n")
