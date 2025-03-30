@@ -11,12 +11,15 @@ class ParagraphCheck:
         self.index += 1
         return self.text
     
+    def formatResult(self, result):
+        if result: 
+            print(f"The paragraph is well formatted using {list(self.tap.keys())[self.index-1]}.")
+        else:
+            print(f"The paragraph is not well formatted using {list(self.tap.keys()[self.index-1])}.")
+        
     def checkWrapper(self):  
         key = list(self.tap.keys())[self.index - 1]  
-        print(f"Checking with {self.tap[key]()}...")
-        print(f"Text: {self.text}")
         return self.tap[key]()              
-
             
     def simpleCheck(self):
         sentence_pattern = r'([A-Z][a-z,\s]+[.!?])'    
@@ -41,5 +44,4 @@ if __name__ == "__main__":
     
     for i in range(3): 
         paragraph.add()
-        print(paragraph.checkWrapper())
-        print("\n")
+        paragraph.formatResult(paragraph.checkWrapper())
