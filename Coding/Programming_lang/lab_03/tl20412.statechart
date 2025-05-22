@@ -13,6 +13,7 @@ commands
     turnOffLight TURN_OFF_LIGHT
     turnOnCamera TURN_ON_CAMERA
     turnOffCamera TURN_OFF_CAMERA
+    track TRACK
     startTransmission START_TRANSMISSION
     stopTransmission STOP_TRANSMISSION
     enterStandby ENTER_STANDBY
@@ -27,7 +28,7 @@ state scanning
 end
 
 state tracking
-    actions {turnOnLight turnOnCamera startTransmission}
+    actions {turnOnLight turnOnCamera track startTransmission}
     motionStopped => delayBeforeStop
     batteryCritical => standby
 end
@@ -40,15 +41,11 @@ end
 
 state stopping
     actions {stopTransmission turnOffCamera turnOffLight}
-    => scanning
+    batteryOk => scanning
 end
 
 state standby
     actions {enterStandby}
-    batteryOk => recovering
+    batteryOk => scanning
 end
 
-state recovering
-    actions {exitStandby}
-    => scanning
-end
