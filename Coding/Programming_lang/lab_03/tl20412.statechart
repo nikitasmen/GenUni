@@ -24,31 +24,31 @@ end
 state scanning
     actions {startScan}
     motionDetected => tracking
-    batteryCritical => standby
+    batteryCritical => recovery
 end
 
 state tracking
     actions {turnOnLight turnOnCamera trackMotion startTransmission}
     motionStopped => delayBeforeStop
-    batteryCritical => standby
+    batteryCritical => recovery
     motionDetected => tracking
 end
 
 state delayBeforeStop
     actions {startTimer}
     timerExpired => stopping
-    batteryCritical => standby
+    batteryCritical => recovery
 end
 
 state stopping
     actions {stopTransmission turnOffCamera turnOffLight}
     batteryOk => scanning
-    batteryCritical => standby
+    batteryCritical => recovery
 end
 
-state standby
+state recovery
     actions {enterStandby}
     batteryOk => scanning
-    batteryCritical => standby
+    batteryCritical => recovery
 end
 
