@@ -34,11 +34,21 @@ end
 
 state delayBeforeStop
     actions {startTimer}
-    timerExpired => scanning actions {stopTransmission turnOffCamera turnOffLight}
+    timerExpired => stopping
     batteryCritical => standby
+end
+
+state stopping
+    actions {stopTransmission turnOffCamera turnOffLight}
+    => scanning
 end
 
 state standby
     actions {enterStandby}
-    batteryOk => scanning actions {exitStandby}
+    batteryOk => recovering
+end
+
+state recovering
+    actions {exitStandby}
+    => scanning
 end
