@@ -8,7 +8,6 @@ end
 
 commands
     startScan START_SCAN
-    stopScan STOP_SCAN
     turnOnLight TURN_ON_LIGHT
     turnOffLight TURN_OFF_LIGHT
     turnOnCamera TURN_ON_CAMERA
@@ -16,8 +15,7 @@ commands
     trackMotion TRACK_MOTION
     startTransmission START_TRANSMISSION
     stopTransmission STOP_TRANSMISSION
-    enterStandby ENTER_STANDBY
-    exitStandby EXIT_STANDBY
+    standby ENTER_STANDBY
     startTimer START_TIMER
 end
 
@@ -47,7 +45,7 @@ state stopping
 end
 
 state recovery
-    actions {enterStandby}
+    actions {standby}
     batteryOk => scanning
     batteryCritical => recovery
 end
