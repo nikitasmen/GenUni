@@ -10,9 +10,9 @@ Statemachine :
     ('resetEvents'
         resetEvents+=[Event]+
     'end')?
-    ('commands'
-        commands+=Command+
-    'end')?
+    ('calculation'
+        calculation+=Calculation+
+    'end')? 
     ('variables'
         variables+=Variable+
     'end')?
@@ -23,11 +23,11 @@ Event:
     name=ID code=ID
 ;
 
-Command:
-    name=ID code=ID
+Calculation: 
+     variable=[Variable] calc_op=CALCULATION_OPERATOR value=BASICTYPE;
 ;
 
-Variable:    basicType=BASICTYPE name=ID;
+Variable:    basicType=BASICTYPE name=ID ( '=' initialValue=BASICTYPE);
 
 BASICTYPE:    'String'|'int'|'boolean'|'float';
 
