@@ -24,7 +24,7 @@ Event:
 ;
 
 Calculation: 
-     variable=[Variable] calc_op=CALCULATION_OPERATOR value=BASICTYPE;
+     variable=[Variable] calc_op=CALCULATION_OPERATOR value=[Variable | BASICTYPE] ;
 ;
 
 Variable:    basicType=BASICTYPE name=ID ( '=' initialValue=BASICTYPE);
