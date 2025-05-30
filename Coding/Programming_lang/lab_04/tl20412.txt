@@ -35,6 +35,10 @@ Expression:    variable=[Variable] op=COMPARISSON_OPERATOR number=INT;
 
 COMPARISSON_OPERATOR:    '>'|'<'|'<='|'>='|'=='|'!=';
 
+Calculation: variable=[Variable] calc_op=CALCULATION_OPERATOR number=BASICTYPE;
+
+CALCULATION_OPERATOR:    '+' | '-' | '*' | '/'; 
+
 State:
     'state' name=ID
         ('actions' '{' actions+=[Command]+ '}')?
