@@ -1,0 +1,52 @@
+events
+    motionDetected MOTION_DETECTED
+    motionStopped MOTION_STOPPED
+    batteryCritical BATTERY_CRITICAL
+    batteryOk BATTERY_OK
+    timerExpired TIMER_EXPIRED
+end
+
+commands
+    startScan START_SCAN
+    turnOnLight TURN_ON_LIGHT
+    turnOffLight TURN_OFF_LIGHT
+    turnOnCamera TURN_ON_CAMERA
+    turnOffCamera TURN_OFF_CAMERA
+    trackMotion TRACK_MOTION
+    startTransmission START_TRANSMISSION
+    stopTransmission STOP_TRANSMISSION
+    standby ENTER_STANDBY
+    startTimer START_TIMER
+end
+
+state scanning
+    actions {startScan}
+    motionDetected => tracking
+    batteryCritical => recovery
+end
+
+state tracking
+    actions {turnOnLight turnOnCamera trackMotion startTransmission}
+    motionStopped => delayBeforeStop
+    batteryCritical => recovery
+    motionDetected => tracking
+end
+
+state delayBeforeStop
+    actions {startTimer}
+    timerExpired => stopping
+    batteryCritical => recovery
+end
+
+state stopping
+    actions {stopTransmission turnOffCamera turnOffLight}
+    batteryOk => scanning
+    batteryCritical => recovery
+end
+
+state recovery
+    actions {standby}
+    batteryOk => scanning
+    batteryCritical => recovery
+end
+
