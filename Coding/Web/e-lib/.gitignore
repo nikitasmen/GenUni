@@ -1,0 +1,24 @@
+# Environment file with sensitive information
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+#Ignore vendor folder   
+/vendor/
+
+#Ignore certificates 
+/certificates/
+
+#Ignore assets folder 
+*.pdf
+*.jpg
